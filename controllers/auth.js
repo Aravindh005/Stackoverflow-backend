@@ -16,7 +16,7 @@ export const signup= async(req,res)=>{
         const newUser = await users.create({name, email, password: hashedPassword})
         const token =jwt.sign({email: newUser.email, id: newUser._id}, "test", {expiresIn: '1h'});
         res.status(200).json({result: newUser, token})
-    } catch(err){
+    } catch(error){
         res.status(500).json("something went wrong");
     }
 }
@@ -35,9 +35,9 @@ export const login = async(req,res)=>{
         }
         const token = jwt.sign({email: existingUser.email, id:existingUser._id}, "test", {expiresIn:"1h"});
         res.status(200).json({result: existingUser, token})
-        console.log(existingUser);
+        
 
-    }catch(err){
+    }catch(error){
         res.status(500).json("something went wrong");
     }
 

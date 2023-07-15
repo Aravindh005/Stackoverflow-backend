@@ -1,11 +1,16 @@
 import express from "express"
-import {askQuestion} from "../controllers/question.js"
-import {getAllQuestions} from "../controllers/question.js"
+import {AskQuestion} from "../controllers/question.js"
+import {getAllQuestions, deleteQuestion, voteQuestion} from "../controllers/question.js"
+import auth from "../middleware/auth.js"
 
 const router= express.Router()
 
-router.post("/Ask",askQuestion)
+router.post("/Ask",auth, AskQuestion)
 
 router.get("/get",getAllQuestions)
+
+router.delete('/delete/:id',auth, deleteQuestion);
+
+router.patch('/vote/:id',auth, voteQuestion);
 
 export default router;

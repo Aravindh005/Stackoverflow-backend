@@ -1,9 +1,9 @@
 import mongoose from "mongoose"
 
 const questionSchema = mongoose.Schema({
-    questiontitle: {type: String, required: "Question must have a title"},
+    questionTitle: {type: String, required: "Question must have a title"},
     questionBody: {type:String, required: "Question must have a body"},
-    questionTag: {type:[String], required: "Question must have a tags"},
+    questionTags: {type:[String], required: "Question must have a tags"},
     noOfAnswers: {type:Number, default:0},
     upVote: {type:[String], default: []},
     downVote: {type:[String], default: []},
