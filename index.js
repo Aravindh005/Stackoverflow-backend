@@ -23,8 +23,10 @@ app.get('/',(req,res) => {
  
 const PORT= process.env.PORT || 5000;
 
-const DATABASE_URL ="mongodb+srv://"+ process.env.CLIENT_ID +":"+ process.env.CLIENT_PW + "@stackoverflow.2cnnbjn.mongodb.net/?retryWrites=true&w=majority";
+const DATABASE_URL ="mongodb+srv://aravindhshanmugam:Aravindh3008@stackoverflow.2cnnbjn.mongodb.net/?retryWrites=true&w=majority";
 
 mongoose.connect(DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true})
     .then(() => app.listen(PORT, () => {console.log(`server running on port ${PORT}`)}))
     .catch((err) => {console.log(err.message)})
+
+    // "+ process.env.CLIENT_ID +":"+ process.env.CLIENT_PW + "
