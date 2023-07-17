@@ -12,7 +12,7 @@ export const AskQuestion = async (req, res) => {
         console.log(error);
         res.status(409).json("Couldn't post a new question")
     }
-}
+} 
 
 export const getAllQuestions = async (req, res) => {
     try {
